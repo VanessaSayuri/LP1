@@ -106,7 +106,7 @@ Jogo::desativaJogador(){
 	while(!m_jogadores[j]->isAtivo()) j++;
 	Jogador * maior = m_jogadores[j];*/
 
-	for (int i = 1; i < m_total_jogadores; ++i)
+	for (int i = 0; i < m_total_jogadores; ++i)
 	{
 		if (m_jogadores[i]->isAtivo()){
 			/*if(m_jogadores[i]->getPontos() == maior->getPontos()){
@@ -120,13 +120,14 @@ Jogo::desativaJogador(){
 					m_jogadores[i]->desativar();
 					//maior = m_jogadores[i];
 					//iguais = false;
-					return true;
+					m_total_ativos--;
 				}
 				else if(m_jogadores[i]->getPontos() == pontuacaoN){
 					//m_jogadores->desativar();
 					//maior = m_jogadores[i];
 					//iguais = false;
-					return false;
+					m_jogadores[i]->isAtivo();;
+
 				}
 				/*else{
 					iguais = true;
